@@ -97,10 +97,7 @@ API will be available at `https://localhost:5001/swagger`.
 
 ## Documentation
 
-- [Architecture](docs/architecture.md)
-- [Threat Model (STRIDE)](docs/threat-model.md)
-- [Test Plan](docs/test-plan.md)
-- [Architecture Decision Records](docs/adr/)
+Full technical documentation (architecture, design patterns, SOLID, STRIDE threat model, test plan, ADRs, performance report) is maintained in LaTeX on Overleaf.
 
 ## License
 

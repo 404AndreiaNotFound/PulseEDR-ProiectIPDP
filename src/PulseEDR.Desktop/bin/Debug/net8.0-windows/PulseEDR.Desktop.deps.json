@@ -1,0 +1,72 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PulseEDR.Desktop/1.0.0": {
+        "dependencies": {
+          "PulseEDR.Agent": "1.0.0",
+          "PulseEDR.Application": "1.0.0"
+        },
+        "runtime": {
+          "PulseEDR.Desktop.dll": {}
+        }
+      },
+      "PulseEDR.Agent/1.0.0": {
+        "dependencies": {
+          "PulseEDR.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PulseEDR.Agent.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PulseEDR.Application/1.0.0": {
+        "dependencies": {
+          "PulseEDR.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PulseEDR.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PulseEDR.Domain/1.0.0": {
+        "runtime": {
+          "PulseEDR.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PulseEDR.Desktop/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PulseEDR.Agent/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PulseEDR.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PulseEDR.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
