@@ -20,8 +20,16 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore PulseEDR.sln
+      - name: Restore (excluding WPF Desktop)
+        run: |
+          dotnet restore src/PulseEDR.Domain/PulseEDR.Domain.csproj
+          dotnet restore src/PulseEDR.Application/PulseEDR.Application.csproj
+          dotnet restore src/PulseEDR.Infrastructure/PulseEDR.Infrastructure.csproj
+          dotnet restore src/PulseEDR.Agent/PulseEDR.Agent.csproj
+          dotnet restore src/PulseEDR.Api/PulseEDR.Api.csproj
+          dotnet restore tests/PulseEDR.UnitTests/PulseEDR.UnitTests.csproj
+          dotnet restore tests/PulseEDR.IntegrationTests/PulseEDR.IntegrationTests.csproj
+          dotnet restore tests/PulseEDR.PerformanceTests/PulseEDR.PerformanceTests.csproj
 
       - name: Build (excluding WPF)
         run: |
