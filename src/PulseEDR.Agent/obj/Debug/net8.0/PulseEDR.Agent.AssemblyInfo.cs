@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PulseEDR.Agent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b0485f454a4fe15bdff2aff589db5b0bad1971e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dbe12c7e12c590595d61b3a031a948ffb8fd760")]
 [assembly: System.Reflection.AssemblyProductAttribute("PulseEDR.Agent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PulseEDR.Agent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -16,3 +16,5 @@ C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastruct
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\obj\Debug\net8.0\refint\PulseEDR.Infrastructure.dll
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\obj\Debug\net8.0\PulseEDR.Infrastructure.pdb
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\obj\Debug\net8.0\ref\PulseEDR.Infrastructure.dll
+C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Infrastructure.runtimeconfig.json
+C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\obj\Debug\net8.0\PulseEDR.Infrastructure.genruntimeconfig.cache

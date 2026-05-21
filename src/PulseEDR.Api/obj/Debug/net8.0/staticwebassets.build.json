@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"SqkbjBxZn+gu2qj97M4X1/TgRxs+R0MIqyiWerBSvJE=","Source":"PulseEDR.Api","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "R2X5KLUJmEk3WTe1zNt5fIARBdaJCnhibjH8OI1yYi8=",
+  "Source": "PulseEDR.Api",
+  "BasePath": "_content/PulseEDR.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
