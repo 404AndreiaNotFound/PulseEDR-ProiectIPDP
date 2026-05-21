@@ -1,0 +1,16 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/.idea/
+**/*.user
+**/*.suo
+**/TestResults/
+**/node_modules/
+.git/
+.github/
+docs/
+installer/
+tests/
+*.md
+*.sln.docstates
