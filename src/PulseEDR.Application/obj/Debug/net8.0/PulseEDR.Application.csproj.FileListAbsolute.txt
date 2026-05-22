@@ -14,3 +14,5 @@ C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Application
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Application\obj\Debug\net8.0\refint\PulseEDR.Application.dll
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Application\obj\Debug\net8.0\PulseEDR.Application.pdb
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Application\obj\Debug\net8.0\ref\PulseEDR.Application.dll
+C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Application\bin\Debug\net8.0\PulseEDR.Infrastructure.dll
+C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Application\bin\Debug\net8.0\PulseEDR.Infrastructure.pdb

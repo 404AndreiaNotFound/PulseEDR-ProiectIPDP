@@ -1,6 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using PulseEDR.Application.Detection;
 using PulseEDR.Application.Detection.Detectors;
+using PulseEDR.Application.Services.Abstractions;
+using PulseEDR.Application.Services.Implementations;
 using PulseEDR.Domain.Abstractions;
 
 namespace PulseEDR.Application.DependencyInjection;
@@ -11,14 +13,13 @@ namespace PulseEDR.Application.DependencyInjection;
 ///   - all IDetector implementations (Strategy pattern)
 ///   - DetectorFactory (Factory pattern)
 ///   - RiskCalculator (Single Responsibility)
-///   - concrete services (added incrementally as they're implemented)
+///   - all concrete application services
 /// </summary>
 public static class ApplicationServiceCollectionExtensions
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         // --- Detectors (Strategy implementations) ---
-        // Order does NOT matter — DetectorFactory enumerates all of them.
         services.AddScoped<IDetector, UnsafeDownloadDetector>();
         services.AddScoped<IDetector, SuspiciousProcessDetector>();
         services.AddScoped<IDetector, RiskyConnectionDetector>();
@@ -29,8 +30,11 @@ public static class ApplicationServiceCollectionExtensions
         services.AddScoped<IRiskCalculator, RiskCalculator>();
 
         // --- Application Services ---
-        // Concrete services (ScanService, AlertService, etc.) are added below
-        // as they are implemented in Etapa 3.3.
+        services.AddScoped<IScanService, ScanService>();
+        services.AddScoped<IAlertService, AlertService>();
+        services.AddScoped<ICveService, CveService>();
+        services.AddScoped<IDashboardService, DashboardService>();
+        services.AddScoped<IWhatIfService, WhatIfService>();
 
         return services;
     }

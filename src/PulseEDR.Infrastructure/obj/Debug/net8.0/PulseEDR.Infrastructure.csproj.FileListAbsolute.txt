@@ -1,9 +1,7 @@
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Infrastructure.deps.json
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Infrastructure.dll
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Infrastructure.pdb
-C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Application.dll
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Domain.dll
-C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Application.pdb
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\bin\Debug\net8.0\PulseEDR.Domain.pdb
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\obj\Debug\net8.0\PulseEDR.Infrastructure.csproj.AssemblyReference.cache
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Infrastructure\obj\Debug\net8.0\PulseEDR.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

@@ -18,6 +18,13 @@
   <ItemGroup>
     <ProjectReference Include="..\PulseEDR.Application\PulseEDR.Application.csproj" />
     <ProjectReference Include="..\PulseEDR.Infrastructure\PulseEDR.Infrastructure.csproj" />
+    <ProjectReference Include="..\PulseEDR.Agent\PulseEDR.Agent.csproj" />
+  </ItemGroup>
+
+ <ItemGroup>
+    <None Update="Data\cves.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
