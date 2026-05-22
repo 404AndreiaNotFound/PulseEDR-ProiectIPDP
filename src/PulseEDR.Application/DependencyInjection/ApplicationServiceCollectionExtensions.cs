@@ -35,6 +35,7 @@ public static class ApplicationServiceCollectionExtensions
         services.AddScoped<ICveService, CveService>();
         services.AddScoped<IDashboardService, DashboardService>();
         services.AddScoped<IWhatIfService, WhatIfService>();
+        services.AddScoped<IDemoScenarioService, DemoScenarioService>();
 
         return services;
     }
