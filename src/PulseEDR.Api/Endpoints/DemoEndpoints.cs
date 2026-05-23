@@ -16,7 +16,8 @@ public static class DemoEndpoints
     {
         var group = app.MapGroup("/api/demo")
             .WithTags("Demo")
-            .WithOpenApi();
+            .WithOpenApi()
+            .RequireAuthorization();
 
         group.MapPost("/threat-chain", async (
             IDemoScenarioService demo, CancellationToken ct) =>

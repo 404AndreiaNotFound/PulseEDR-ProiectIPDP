@@ -15,7 +15,8 @@ public static class AlertEndpoints
     {
         var group = app.MapGroup("/api/alerts")
             .WithTags("Alerts")
-            .WithOpenApi();
+            .WithOpenApi()
+            .RequireAuthorization();
 
         group.MapGet("/", async (
             IAlertService alerts,

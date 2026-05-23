@@ -13,7 +13,8 @@ public static class DashboardEndpoints
     {
         var group = app.MapGroup("/api/dashboard")
             .WithTags("Dashboard")
-            .WithOpenApi();
+            .WithOpenApi()
+            .RequireAuthorization();
 
         group.MapGet("/summary", async (
             IDashboardService dashboard, CancellationToken ct) =>

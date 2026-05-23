@@ -16,7 +16,8 @@ public static class ScanEndpoints
     {
         var group = app.MapGroup("/api/scan")
             .WithTags("Scans")
-            .WithOpenApi();
+            .WithOpenApi()
+            .RequireAuthorization();
 
         group.MapPost("/", async (IScanService scans, CancellationToken ct) =>
         {

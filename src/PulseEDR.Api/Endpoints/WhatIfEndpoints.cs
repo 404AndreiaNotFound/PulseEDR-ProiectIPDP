@@ -17,7 +17,8 @@ public static class WhatIfEndpoints
     {
         var group = app.MapGroup("/api/whatif")
             .WithTags("What-If")
-            .WithOpenApi();
+            .WithOpenApi()
+            .RequireAuthorization();
 
         group.MapPost("/{scanId:guid}", async (
             Guid scanId,

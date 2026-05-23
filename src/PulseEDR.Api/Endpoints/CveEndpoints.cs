@@ -15,7 +15,8 @@ public static class CveEndpoints
     {
         var group = app.MapGroup("/api/cves")
             .WithTags("CVEs")
-            .WithOpenApi();
+            .WithOpenApi()
+            .RequireAuthorization();
 
         group.MapGet("/", async (
             ICveService cves,
