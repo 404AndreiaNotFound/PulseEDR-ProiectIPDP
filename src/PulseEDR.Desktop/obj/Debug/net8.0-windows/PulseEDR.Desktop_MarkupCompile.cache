@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\polim\Desktop\IPDPproiect\PulseEDR-ProiectIPDP\src\PulseEDR.Desktop\App.xaml
-11407045341
+5298331675
 
-4-1081311271
-222-1577304418
-MainWindow.xaml;
+141868351772
+225-326666087
+MainWindow.xaml;Views\AlertsView.xaml;Views\DashboardView.xaml;Views\MainWindow.xaml;Views\ScanView.xaml;
 
 False
 
