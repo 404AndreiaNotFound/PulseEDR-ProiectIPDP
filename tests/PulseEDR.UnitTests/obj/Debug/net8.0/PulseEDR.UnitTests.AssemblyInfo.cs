@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PulseEDR.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b6d8a3175c4cb861eb5d0f22d764e552193b4b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf2b1357f2a70f08a114f94e4e36378998076984")]
 [assembly: System.Reflection.AssemblyProductAttribute("PulseEDR.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PulseEDR.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

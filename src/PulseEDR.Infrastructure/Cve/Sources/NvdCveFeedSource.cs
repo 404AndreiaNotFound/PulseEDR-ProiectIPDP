@@ -91,7 +91,7 @@ public class NvdCveFeedSource : ICveFeedSource
             .FirstOrDefault()?.CpeMatch?
             .FirstOrDefault()?.Criteria ?? "Unknown";
 
-        var publishedAt = v.Published ?? DateTime.UtcNow;
+        var publishedAt = v.Published.HasValue ? DateTime.SpecifyKind(v.Published.Value, DateTimeKind.Utc) : DateTime.UtcNow;
 
         return new CveEntry(
             cveId: v.Id,

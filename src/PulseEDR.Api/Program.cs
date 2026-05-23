@@ -16,7 +16,10 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 
 // Agent (stub for now)
-builder.Services.AddScoped<IAgentScanner, StubAgentScanner>();
+// builder.Services.AddScoped<IAgentScanner, StubAgentScanner>();
+
+// Changed Agent
+builder.Services.AddScoped<IAgentScanner, WindowsAgentScanner>();
 
 // JWT Authentication
 var jwtIssuer   = builder.Configuration["Jwt:Issuer"]!;

@@ -39,7 +39,7 @@ public class CveEntry : Entity, IAuditable
         Description = description;
         Remediation = remediation;
         ReferenceUrl = referenceUrl;
-        PublishedAt = publishedAt;
+        PublishedAt = publishedAt.Kind == DateTimeKind.Utc ? publishedAt : DateTime.SpecifyKind(publishedAt, DateTimeKind.Utc);
         CreatedAt = DateTime.UtcNow;
     }
 }

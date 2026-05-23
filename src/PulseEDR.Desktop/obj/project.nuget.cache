@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TRMNlOKyc6M=",
+  "dgSpecHash": "x/5OAdgQuFs=",
   "success": true,
   "projectFilePath": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Desktop\\PulseEDR.Desktop.csproj",
   "expectedPackageFiles": [
@@ -23,9 +23,13 @@
     "C:\\Users\\polim\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
     "C:\\Users\\polim\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
     "C:\\Users\\polim\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\polim\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\polim\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\polim\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512",
     "C:\\Users\\polim\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.10\\npgsql.entityframeworkcore.postgresql.8.0.10.nupkg.sha512",
-    "C:\\Users\\polim\\.nuget\\packages\\system.net.http.json\\8.0.1\\system.net.http.json.8.0.1.nupkg.sha512"
+    "C:\\Users\\polim\\.nuget\\packages\\system.net.http.json\\8.0.1\\system.net.http.json.8.0.1.nupkg.sha512",
+    "C:\\Users\\polim\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\polim\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

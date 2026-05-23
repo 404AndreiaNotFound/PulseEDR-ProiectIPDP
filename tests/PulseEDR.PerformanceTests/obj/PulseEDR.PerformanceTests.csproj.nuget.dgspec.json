@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {
               "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Domain\\PulseEDR.Domain.csproj": {
                 "projectPath": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Domain\\PulseEDR.Domain.csproj"
@@ -51,8 +51,18 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Win32.Registry": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -91,7 +101,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -99,8 +109,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {
               "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Agent\\PulseEDR.Agent.csproj": {
                 "projectPath": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Agent\\PulseEDR.Agent.csproj"
@@ -126,8 +136,8 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -441,7 +451,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net8.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -449,8 +459,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {
               "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Api\\PulseEDR.Api.csproj": {
                 "projectPath": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Api\\PulseEDR.Api.csproj"
@@ -470,8 +480,8 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
