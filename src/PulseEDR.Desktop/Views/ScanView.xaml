@@ -19,6 +19,9 @@
                     IsEnabled="{Binding IsScanning, Converter={StaticResource InverseBool}}"/>
             <TextBlock Text="{Binding ScanStatus}" Foreground="#888"
                        FontSize="14" VerticalAlignment="Center" Margin="16,0,0,0"/>
+            <ProgressBar IsIndeterminate="True" Height="4" Margin="16,0,0,0"
+             Width="120" VerticalAlignment="Center"
+             Visibility="{Binding IsScanning, Converter={StaticResource BoolToVisibility}}"/>
         </StackPanel>
 
         <!-- Results -->
