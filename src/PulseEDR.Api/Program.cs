@@ -119,3 +119,6 @@ app.MapWhatIfEndpoints();
 app.MapDemoEndpoints();
 
 app.Run();
+
+// Makes Program accessible for WebApplicationFactory in integration tests
+public partial class Program { }

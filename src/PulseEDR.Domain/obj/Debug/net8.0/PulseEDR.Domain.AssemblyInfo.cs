@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PulseEDR.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3149bfd1868221ee564c252073a0d23815036aa4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46947ce4474e425299cb2595bdecd74015e44024")]
 [assembly: System.Reflection.AssemblyProductAttribute("PulseEDR.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PulseEDR.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,7 @@
+{
+  "PulseEDR.Agent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Agent",
+  "PulseEDR.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Api",
+  "PulseEDR.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Application",
+  "PulseEDR.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Domain",
+  "PulseEDR.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\polim\\Desktop\\IPDPproiect\\PulseEDR-ProiectIPDP\\src\\PulseEDR.Infrastructure"
+}
