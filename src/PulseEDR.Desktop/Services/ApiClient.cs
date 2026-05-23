@@ -83,7 +83,7 @@ public async Task<string?> LoginAsync(string username, string password)
     // DASHBOARD
     public async Task<JsonDocument?> GetDashboardAsync()
     {
-        var response = await _http.GetAsync("/api/dashboard");
+        var response = await _http.GetAsync("/api/dashboard/summary");
         if (!response.IsSuccessStatusCode) return null;
         return await JsonDocument.ParseAsync(
             await response.Content.ReadAsStreamAsync());

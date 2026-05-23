@@ -6,11 +6,9 @@
             <TextBlock Text="Dashboard" FontSize="28" FontWeight="Bold"
                        Foreground="White" Margin="0,0,0,24"/>
 
-            <!-- Stats cards -->
             <WrapPanel>
-                <!-- Total Scans -->
                 <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
-                        Margin="0,0,16,16" MinWidth="180">
+                        Margin="0,0,16,16" MinWidth="170">
                     <StackPanel>
                         <TextBlock Text="Total Scans" Foreground="#888" FontSize="13"/>
                         <TextBlock Text="{Binding TotalScans}" Foreground="White"
@@ -18,9 +16,8 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Total Alerts -->
                 <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
-                        Margin="0,0,16,16" MinWidth="180">
+                        Margin="0,0,16,16" MinWidth="170">
                     <StackPanel>
                         <TextBlock Text="Total Alerts" Foreground="#888" FontSize="13"/>
                         <TextBlock Text="{Binding TotalAlerts}" Foreground="#ff6b6b"
@@ -28,29 +25,44 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Risk Level -->
                 <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
-                        Margin="0,0,16,16" MinWidth="180">
+                        Margin="0,0,16,16" MinWidth="170">
                     <StackPanel>
-                        <TextBlock Text="Risk Level" Foreground="#888" FontSize="13"/>
-                        <TextBlock Text="{Binding RiskLevel}" Foreground="#ffa500"
+                        <TextBlock Text="Critical Alerts" Foreground="#888" FontSize="13"/>
+                        <TextBlock Text="{Binding CriticalAlerts}" Foreground="#ff4444"
                                    FontSize="36" FontWeight="Bold" Margin="0,8,0,0"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Last Scan -->
+                <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
+                        Margin="0,0,16,16" MinWidth="170">
+                    <StackPanel>
+                        <TextBlock Text="Known CVEs" Foreground="#888" FontSize="13"/>
+                        <TextBlock Text="{Binding KnownVulnerabilities}" Foreground="#ffa500"
+                                   FontSize="36" FontWeight="Bold" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
+                        Margin="0,0,16,16" MinWidth="170">
+                    <StackPanel>
+                        <TextBlock Text="Risk Level" Foreground="#888" FontSize="13"/>
+                        <TextBlock Text="{Binding RiskLevel}" Foreground="#ffa500"
+                                   FontSize="28" FontWeight="Bold" Margin="0,8,0,0"/>
+                    </StackPanel>
+                </Border>
+
                 <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
                         Margin="0,0,16,16" MinWidth="220">
                     <StackPanel>
                         <TextBlock Text="Last Scan" Foreground="#888" FontSize="13"/>
                         <TextBlock Text="{Binding LastScanTime}" Foreground="#4CAF50"
-                                   FontSize="14" FontWeight="Bold" Margin="0,8,0,0"
+                                   FontSize="13" FontWeight="Bold" Margin="0,8,0,0"
                                    TextWrapping="Wrap"/>
                     </StackPanel>
                 </Border>
             </WrapPanel>
 
-            <!-- Loading indicator -->
             <TextBlock Text="Loading..." Foreground="#888" FontSize="14" Margin="0,16,0,0"
                        Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}"/>
         </StackPanel>
