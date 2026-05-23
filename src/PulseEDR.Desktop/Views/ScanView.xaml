@@ -8,8 +8,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Run Scan" FontSize="28" FontWeight="Bold"
-                   Foreground="White" Margin="0,0,0,24"/>
+        <TextBlock Grid.Row="0" Text="🔍 Run Security Scan" FontSize="28" FontWeight="Bold"
+           Foreground="White" Margin="0,0,0,24"/>
 
         <!-- Scan button + status -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,24">
