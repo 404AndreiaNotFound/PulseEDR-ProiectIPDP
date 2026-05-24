@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pulseedr-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pulseedr
+      POSTGRES_PASSWORD: pulseedr_dev_pwd
+      POSTGRES_DB: pulseedr_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pulseedr_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pulseedr -d pulseedr_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    container_name: pulseedr-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: "Host=postgres;Port=5432;Database=pulseedr_db;Username=pulseedr;Password=pulseedr_dev_pwd"
+    ports:
+      - "8080:8080"
+    profiles:
+      - full
+
+volumes:
+  pulseedr_pgdata:
+    name: pulseedr_pgdata

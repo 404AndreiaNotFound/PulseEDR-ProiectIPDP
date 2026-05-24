@@ -1,0 +1,27 @@
+<UserControl x:Class="PulseEDR.Desktop.Views.AlertsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Alerts" FontSize="28" FontWeight="Bold"
+                   Foreground="White" Margin="0,0,0,24"/>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Alerts}"
+                  AutoGenerateColumns="False" IsReadOnly="True"
+                  Background="#1e1e3f" Foreground="White"
+                  BorderThickness="0" GridLinesVisibility="Horizontal"
+                  RowBackground="#1e1e3f" AlternatingRowBackground="#16213e"
+                  ColumnHeaderHeight="36">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Severity" Binding="{Binding Severity}" Width="90"/>
+                <DataGridTextColumn Header="Score" Binding="{Binding Score}" Width="60"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="140"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
