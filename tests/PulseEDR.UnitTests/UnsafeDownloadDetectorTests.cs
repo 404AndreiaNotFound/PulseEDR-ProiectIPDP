@@ -8,6 +8,9 @@ public class UnsafeDownloadDetectorTests
 {
     private readonly UnsafeDownloadDetector _detector = new();
 
+    private static string Combine(params string[] parts) =>
+        string.Join(Path.DirectorySeparatorChar.ToString(), parts);
+
     private static ScanResult MakeScan(List<RecentFile> files)
     {
         var scan = new ScanResult("TEST-PC", "Windows 11");
@@ -18,10 +21,11 @@ public class UnsafeDownloadDetectorTests
     [Fact]
     public async Task ExeInDownloads_ShouldReturnHighAlert()
     {
+        var path = Combine("C:", "Users", "test", "Downloads", "malware.exe");
         var scan = MakeScan(new List<RecentFile>
         {
             new RecentFile(
-                fullPath: @"C:\Users\test\Downloads\malware.exe",
+                fullPath: path,
                 fileName: "malware.exe",
                 extension: ".exe",
                 sizeBytes: 1024,
@@ -38,10 +42,11 @@ public class UnsafeDownloadDetectorTests
     [Fact]
     public async Task TxtInDownloads_ShouldReturnNoAlerts()
     {
+        var path = Combine("C:", "Users", "test", "Downloads", "readme.txt");
         var scan = MakeScan(new List<RecentFile>
         {
             new RecentFile(
-                fullPath: @"C:\Users\test\Downloads\readme.txt",
+                fullPath: path,
                 fileName: "readme.txt",
                 extension: ".txt",
                 sizeBytes: 512,
@@ -57,10 +62,11 @@ public class UnsafeDownloadDetectorTests
     [Fact]
     public async Task ExeInSystem32_ShouldReturnNoAlerts()
     {
+        var path = Combine("C:", "Windows", "System32", "notepad.exe");
         var scan = MakeScan(new List<RecentFile>
         {
             new RecentFile(
-                fullPath: @"C:\Windows\System32\notepad.exe",
+                fullPath: path,
                 fileName: "notepad.exe",
                 extension: ".exe",
                 sizeBytes: 1024,
