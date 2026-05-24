@@ -99,6 +99,29 @@ API will be available at `https://localhost:5001/swagger`.
 
 Full technical documentation (architecture, design patterns, SOLID, STRIDE threat model, test plan, ADRs, performance report) is maintained in LaTeX on Overleaf.
 
+## Testing
+
+The project includes three test suites:
+
+- **Unit Tests** — 27 tests covering risk calculator and all detectors (RiskScore, RiskCalculator, UnsafeDownloadDetector, SuspiciousProcessDetector)
+- **Integration Tests** — 5 tests using `WebApplicationFactory` to verify JWT auth, health checks, and authorization on protected endpoints
+- **Manual Test Plan** — see [docs/TestPlan.md](docs/TestPlan.md) for the full manual QA checklist
+
+Run all tests:
+
+    dotnet test
+
+## Installer
+
+A Windows installer is built with **Inno Setup 6**:
+
+    # 1. Publish the desktop app
+    dotnet publish src/PulseEDR.Desktop -c Release -r win-x64 --self-contained false -o publish/desktop
+    
+    # 2. Open installer/PulseEDR.iss in Inno Setup Compiler and press F9
+
+Output: `installer/Output/PulseEDR-Setup-1.0.0.exe`
+
 ## License
 
 This project is for academic purposes.
