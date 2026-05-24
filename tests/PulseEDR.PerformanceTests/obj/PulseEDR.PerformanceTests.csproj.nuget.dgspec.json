@@ -487,6 +487,14 @@
               "target": "Package",
               "version": "[17.8.0, )"
             },
+            "NBomber": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "NBomber.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[6.0.0, )"
