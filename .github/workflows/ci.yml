@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, dev, test ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build-and-test:
+    name: Build and Test (Linux)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore (Linux-compatible projects only)
+        run: |
+          dotnet restore src/PulseEDR.Domain/PulseEDR.Domain.csproj
+          dotnet restore src/PulseEDR.Application/PulseEDR.Application.csproj
+          dotnet restore src/PulseEDR.Infrastructure/PulseEDR.Infrastructure.csproj
+          dotnet restore tests/PulseEDR.UnitTests/PulseEDR.UnitTests.csproj
+
+      - name: Build (Linux-compatible projects only)
+        run: |
+          dotnet build src/PulseEDR.Domain/PulseEDR.Domain.csproj --configuration Release --no-restore
+          dotnet build src/PulseEDR.Application/PulseEDR.Application.csproj --configuration Release --no-restore
+          dotnet build src/PulseEDR.Infrastructure/PulseEDR.Infrastructure.csproj --configuration Release --no-restore
+          dotnet build tests/PulseEDR.UnitTests/PulseEDR.UnitTests.csproj --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test tests/PulseEDR.UnitTests/PulseEDR.UnitTests.csproj --configuration Release --no-build --verbosity normal --logger trx --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/
+
+  build-windows:
+    name: Build Windows projects (Desktop + Api + Agent + tests)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: |
+          dotnet restore src/PulseEDR.Desktop/PulseEDR.Desktop.csproj
+          dotnet restore src/PulseEDR.Agent/PulseEDR.Agent.csproj
+          dotnet restore src/PulseEDR.Api/PulseEDR.Api.csproj
+          dotnet restore tests/PulseEDR.IntegrationTests/PulseEDR.IntegrationTests.csproj
+          dotnet restore tests/PulseEDR.PerformanceTests/PulseEDR.PerformanceTests.csproj
+
+      - name: Build
+        run: |
+          dotnet build src/PulseEDR.Agent/PulseEDR.Agent.csproj --configuration Release --no-restore
+          dotnet build src/PulseEDR.Api/PulseEDR.Api.csproj --configuration Release --no-restore
+          dotnet build src/PulseEDR.Desktop/PulseEDR.Desktop.csproj --configuration Release --no-restore
+          dotnet build tests/PulseEDR.IntegrationTests/PulseEDR.IntegrationTests.csproj --configuration Release --no-restore
+          dotnet build tests/PulseEDR.PerformanceTests/PulseEDR.PerformanceTests.csproj --configuration Release --no-restore

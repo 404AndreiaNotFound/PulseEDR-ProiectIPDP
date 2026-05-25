@@ -1,0 +1,34 @@
+# Build stage
+
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copy csproj files first (better layer caching)
+COPY ["src/PulseEDR.Domain/PulseEDR.Domain.csproj", "src/PulseEDR.Domain/"]
+COPY ["src/PulseEDR.Application/PulseEDR.Application.csproj", "src/PulseEDR.Application/"]
+COPY ["src/PulseEDR.Infrastructure/PulseEDR.Infrastructure.csproj", "src/PulseEDR.Infrastructure/"]
+COPY ["src/PulseEDR.Api/PulseEDR.Api.csproj", "src/PulseEDR.Api/"]
+
+RUN dotnet restore "src/PulseEDR.Api/PulseEDR.Api.csproj"
+
+# Copy everything else
+COPY src/ src/
+
+WORKDIR /src/src/PulseEDR.Api
+RUN dotnet publish "PulseEDR.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+
+# Runtime stage
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+
+# Non-root user (security best practice)
+RUN groupadd -r pulseedr && useradd -r -g pulseedr pulseedr
+USER pulseedr
+
+COPY --from=build /app/publish .
+
+EXPOSE 8080
+
+ENTRYPOINT ["dotnet", "PulseEDR.Api.dll"]
