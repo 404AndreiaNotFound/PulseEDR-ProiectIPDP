@@ -1,0 +1,92 @@
+<Window x:Class="PulseEDR.Desktop.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:vm="clr-namespace:PulseEDR.Desktop.ViewModels"
+        xmlns:views="clr-namespace:PulseEDR.Desktop.Views"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="PulseEDR — Light EDR Security Coach"
+        Height="700" Width="1100"
+        MinHeight="600" MinWidth="900">
+
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- TOP BAR -->
+        <Border Grid.Row="0" Background="#1a1a2e" Padding="16,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="🛡️" FontSize="22" VerticalAlignment="Center"/>
+                    <TextBlock Text="PulseEDR" FontSize="18" FontWeight="Bold"
+                               Foreground="White" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="Security Coach" FontSize="12" Foreground="#888"
+                               Margin="8,4,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <!-- LOGIN PANEL -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal"
+                            Visibility="{Binding IsLoggedIn, Converter={StaticResource InverseBoolToVisibility}}">
+                    <TextBox Text="{Binding Username}" Width="90" Margin="4,0"
+                             ui:ControlHelper.PlaceholderText="user"/>
+                    <PasswordBox x:Name="PwdBox" Width="90" Margin="4,0"/>
+                    <Button Content="Connect" Command="{Binding LoginCommand}"
+                            Background="#0078d4" Foreground="White" Padding="12,4"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="2" Text="{Binding StatusText}"
+                           Foreground="#4CAF50" VerticalAlignment="Center"
+                           Visibility="{Binding IsLoggedIn, Converter={StaticResource BoolToVisibility}}"/>
+            </Grid>
+        </Border>
+
+        <!-- MAIN CONTENT -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- SIDEBAR -->
+            <Border Grid.Column="0" Background="#16213e">
+                <StackPanel Margin="0,16,0,0">
+                    <Button Content="📊  Dashboard" Command="{Binding NavigateToDashboardCommand}"
+                            Style="{StaticResource NavButtonStyle}" IsEnabled="{Binding IsLoggedIn}"/>
+                    <Button Content="🔍  Scan" Command="{Binding NavigateToScanCommand}"
+                            Style="{StaticResource NavButtonStyle}" IsEnabled="{Binding IsLoggedIn}"/>
+                    <Button Content="🚨  Alerts" Command="{Binding NavigateToAlertsCommand}"
+                            Style="{StaticResource NavButtonStyle}" IsEnabled="{Binding IsLoggedIn}"/>
+                </StackPanel>
+            </Border>
+
+            <!-- CONTENT AREA -->
+            <Border Grid.Column="1" Background="#0f0f23">
+                <ContentControl Content="{Binding CurrentView}">
+                    <ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+                            <views:DashboardView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type vm:ScanViewModel}">
+                            <views:ScanView/>
+                        </DataTemplate>
+                        <DataTemplate DataType="{x:Type vm:AlertsViewModel}">
+                            <views:AlertsView/>
+                        </DataTemplate>
+                    </ContentControl.Resources>
+                </ContentControl>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

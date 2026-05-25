@@ -1,0 +1,66 @@
+<UserControl x:Class="PulseEDR.Desktop.Views.ScanView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="32">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="🔍 Run Security Scan" FontSize="28" FontWeight="Bold"
+           Foreground="White" Margin="0,0,0,24"/>
+
+        <!-- Scan button + status -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,24">
+            <Button Content="🔍  Start Scan" Command="{Binding RunScanCommand}"
+                    Background="#0078d4" Foreground="White"
+                    Padding="20,10" FontSize="15" FontWeight="Bold"
+                    IsEnabled="{Binding IsScanning, Converter={StaticResource InverseBool}}"/>
+            <TextBlock Text="{Binding ScanStatus}" Foreground="#888"
+                       FontSize="14" VerticalAlignment="Center" Margin="16,0,0,0"/>
+            <ProgressBar IsIndeterminate="True" Height="4" Margin="16,0,0,0"
+             Width="120" VerticalAlignment="Center"
+             Visibility="{Binding IsScanning, Converter={StaticResource BoolToVisibility}}"/>
+        </StackPanel>
+
+        <!-- Results -->
+        <WrapPanel Grid.Row="2">
+            <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
+                    Margin="0,0,16,16" MinWidth="160">
+                <StackPanel>
+                    <TextBlock Text="Machine" Foreground="#888" FontSize="13"/>
+                    <TextBlock Text="{Binding MachineName}" Foreground="White"
+                               FontSize="16" FontWeight="Bold" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
+                    Margin="0,0,16,16" MinWidth="160">
+                <StackPanel>
+                    <TextBlock Text="Risk Score" Foreground="#888" FontSize="13"/>
+                    <TextBlock Text="{Binding RiskScore}" Foreground="#ffa500"
+                               FontSize="36" FontWeight="Bold" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
+                    Margin="0,0,16,16" MinWidth="160">
+                <StackPanel>
+                    <TextBlock Text="Severity" Foreground="#888" FontSize="13"/>
+                    <TextBlock Text="{Binding Severity}" Foreground="#ff6b6b"
+                               FontSize="24" FontWeight="Bold" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="#1e1e3f" CornerRadius="8" Padding="24"
+                    Margin="0,0,16,16" MinWidth="160">
+                <StackPanel>
+                    <TextBlock Text="Alerts Found" Foreground="#888" FontSize="13"/>
+                    <TextBlock Text="{Binding AlertCount}" Foreground="#ff6b6b"
+                               FontSize="36" FontWeight="Bold" Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+        </WrapPanel>
+    </Grid>
+</UserControl>

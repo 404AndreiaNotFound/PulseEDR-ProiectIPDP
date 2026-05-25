@@ -1,0 +1,6 @@
+@PulseEDR.Api_HostAddress = http://localhost:5015
+
+GET {{PulseEDR.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
